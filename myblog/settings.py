@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     # Mis Apps
+    'core',
     'blog.apps.BlogConfig',
     'perfil.apps.PerfilConfig',
 
