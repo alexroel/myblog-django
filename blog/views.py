@@ -1,9 +1,13 @@
-from django.http.response import HttpResponse
+#Django
 from django.shortcuts import render, HttpResponse
 
+#Models 
+from .models import Post
 # Create your views here.
 def posts(resques):
-    return HttpResponse('Págia de publicaciones')
+    posts = Post.objects.all()
+    return HttpResponse(posts)
 
 def post(request, id):
-    return HttpResponse('Mi Blog')
+    post = Post.objects.get(id=id)
+    return HttpResponse(post)

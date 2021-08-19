@@ -16,6 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+#Django Settings
+from django.conf import settings
+from django.conf.urls.static import static
+
 urlpatterns = [
     #URLconf de core
     path('', include('core.urls')),
@@ -25,4 +29,4 @@ urlpatterns = [
     path('perfil/', include('perfil.urls')),
     #Admin 
     path('admin/', admin.site.urls),
-]
+] + static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)
